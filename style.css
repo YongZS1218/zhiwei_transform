@@ -22,7 +22,6 @@ body {
   border-radius: 50%;
   background-color: white; /* 设置转盘颜色为白色 */
   border: 3px solid black; /* 轮廓黑色 */
-  position: relative;
   cursor: grab;
   transition: transform 0.1s ease;
 }
