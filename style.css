@@ -31,13 +31,24 @@ body {
 
 .outer-wheel {
   position: absolute;
-  width: 200%; /* 外圈比内圈大 */
-  height: 200%; 
+  width: 150%; /* 让外圈更大 */
+  height: 150%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -10%;
-  top: -10%;
+  left: -25%; /* 调整位置确保居中 */
+  top: -25%;
+  z-index: 5; /* 控制层级，确保外圈在底层 */
+}
+
+.inner-wheel {
+  position: absolute;
+  width: 80%; /* 保持内圈较小 */
+  height: 80%;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid black;
+  z-index: 10; /* 让内圈显示在外圈上层 */
 }
 
 .draggable:active {
