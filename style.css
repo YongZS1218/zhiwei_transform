@@ -1,4 +1,4 @@
-/* 设置页面整体布局 */
+/* 页面整体布局 */
 body {
   display: flex;
   flex-direction: column;
@@ -10,25 +10,17 @@ body {
   background-color: #f8f9fa;
 }
 
-/* 外层容器 */
+/* 转盘外部容器 */
 .wheel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 450px; /* 扩大容器尺寸 */
+  height: 450px;
 }
 
-/* 旋转盘的基本样式 */
-.draggable {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: white; /* 转盘背景改为白色 */
-  border: 3px solid black; /* 轮廓改为黑色 */
-  cursor: grab;
-  transition: transform 0.2s ease-out;
-}
-
+/* 外圈转盘 */
 .outer-wheel {
   position: absolute;
   width: 180%; /* 让外圈更大 */
@@ -36,11 +28,18 @@ body {
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -40%; /* 调整位置确保居中 */
+  left: -40%; /* 调整位置，确保居中 */
   top: -40%;
-  z-index: 5;
+  z-index: 5; /* 让外圈处于较底层 */
+  cursor: grab;
+  transition: transform 0.2s ease-out;
 }
 
+.outer-wheel:active {
+  cursor: grabbing;
+}
+
+/* 内圈转盘 */
 .inner-wheel {
   position: absolute;
   width: 100%; /* 让内圈稍微大一些 */
@@ -48,19 +47,11 @@ body {
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  z-index: 10;
+  z-index: 10; /* 让内圈处于上层 */
+  cursor: grab;
 }
 
-.wheel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 400px; /* 扩大容器大小 */
-  height: 400px;
-}
-
-.draggable:active {
+.inner-wheel:active {
   cursor: grabbing;
 }
 
@@ -68,11 +59,12 @@ body {
 .line {
   position: absolute;
   width: 2px;
-  height: 95%; /* 让线条更长 */
+  height: 95%; /* 让线条更长，覆盖整个转盘 */
   background-color: black;
   left: 50%;
   top: 2%; /* 适当调整顶部位置 */
   transform-origin: center;
+  z-index: 1; /* 确保线条不会覆盖文字 */
 }
 
 /* 旋转盘上的格子 */
@@ -80,12 +72,12 @@ body {
   position: absolute;
   width: 50%;
   height: 50%;
-  background-color: white;
+  background-color: transparent; /* 取消白色背景，避免遮挡 */
   border: 1px solid black;
-  transform-origin: center;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  transform-origin: 100% 100%;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 使格子呈现扇形 */
   
-  /* 讓文字正確顯示 */
+  /* 文字居中显示 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,6 +86,11 @@ body {
   color: black;
   text-align: center;
 
-/* 提高层级，避免被线条覆盖 */
-  z-index: 10;
+  /* 提高层级，避免被线条覆盖 */
+  z-index: 5;
+}
+
+/* 文字超出格子时隐藏 */
+.segment {
+  overflow: hidden;
 }
