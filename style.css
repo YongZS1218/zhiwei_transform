@@ -1,7 +1,6 @@
 /* 页面整体布局 */
 body {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -10,87 +9,60 @@ body {
   background-color: #f8f9fa;
 }
 
-/* 转盘外部容器 */
+/* 转盘容器 */
 .wheel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  width: 450px; /* 扩大容器尺寸 */
+  width: 450px;
   height: 450px;
 }
 
 /* 外圈转盘 */
 .outer-wheel {
   position: absolute;
-  width: 180%; /* 让外圈更大 */
+  width: 180%;
   height: 180%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -40%; /* 调整位置，确保居中 */
+  left: -40%;
   top: -40%;
-  z-index: 5; /* 让外圈处于较底层 */
-  cursor: grab;
-  transition: transform 0.2s ease-out;
-}
-
-.outer-wheel:active {
-  cursor: grabbing;
+  z-index: 5;
 }
 
 /* 内圈转盘 */
 .inner-wheel {
   position: absolute;
-  width: 100%; /* 让内圈稍微大一些 */
+  width: 100%;
   height: 100%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  z-index: 10; /* 让内圈处于上层 */
-  cursor: grab;
+  z-index: 10;
 }
 
-.inner-wheel:active {
-  cursor: grabbing;
-}
-
-/* 旋转盘上的放射线 */
+/* 放射线 */
 .line {
   position: absolute;
   width: 2px;
-  height: 95%; /* 让线条更长，覆盖整个转盘 */
+  height: 95%;
   background-color: black;
   left: 50%;
-  top: 2%; /* 适当调整顶部位置 */
+  top: 2%;
   transform-origin: center;
-  z-index: 1; /* 确保线条不会覆盖文字 */
 }
 
-/* 旋转盘上的格子 */
+/* 格子样式 */
 .segment {
   position: absolute;
   width: 50%;
   height: 50%;
-  background-color: transparent; /* 取消白色背景，避免遮挡 */
+  background-color: transparent;
   border: 1px solid black;
-  transform-origin: 100% 100%;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 使格子呈现扇形 */
-  
-  /* 文字居中显示 */
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
   color: black;
-  text-align: center;
-
-  /* 提高层级，避免被线条覆盖 */
   z-index: 5;
-}
-
-/* 文字超出格子时隐藏 */
-.segment {
-  overflow: hidden;
 }
