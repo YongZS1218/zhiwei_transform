@@ -30,3 +30,13 @@ body {
 .draggable:active {
   cursor: grabbing;
 }
+
+.line {
+  position: absolute;
+  width: 2px; /* 线的宽度 */
+  height: 50%; /* 线的长度（从圆心到边缘） */
+  background-color: black;
+  left: 50%;
+  top: 0;
+  transform-origin: bottom;
+}
