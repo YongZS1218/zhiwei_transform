@@ -54,15 +54,22 @@ body {
 /* 格子样式 */
 .segment {
   position: absolute;
-  width: 50%;
-  height: 50%;
-  background-color: transparent;
-  border: 1px solid black;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  width: 45%;
+  height: 45%;
+  background-color: transparent; /* 取消白色背景，避免遮擋 */
+  border: none; /* 移除多余的边框 */
+  transform-origin: 100% 100%;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 使格子呈现扇形 */
+  
+  /* 文字均匀分布，并随格子旋转 */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  font-weight: bold;
   color: black;
+  text-align: center;
+  transform: rotate(-15deg); /* 让文字跟随格子角度 */
+  
   z-index: 5;
 }
