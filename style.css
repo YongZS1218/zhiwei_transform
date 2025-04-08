@@ -31,24 +31,33 @@ body {
 
 .outer-wheel {
   position: absolute;
-  width: 140%; /* 外圈稍微縮小，避免過度佔用空間 */
-  height: 140%;
+  width: 180%; /* 让外圈更大 */
+  height: 180%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -20%; /* 重新調整居中 */
-  top: -20%;
+  left: -40%; /* 调整位置确保居中 */
+  top: -40%;
   z-index: 5;
 }
 
 .inner-wheel {
   position: absolute;
-  width: 80%; /* 內圈保持較小 */
-  height: 80%;
+  width: 100%; /* 让内圈稍微大一些 */
+  height: 100%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
   z-index: 10;
+}
+
+.wheel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 400px; /* 扩大容器大小 */
+  height: 400px;
 }
 
 .draggable:active {
@@ -59,10 +68,10 @@ body {
 .line {
   position: absolute;
   width: 2px;
-  height: 90%; /* 讓線條稍微縮短，避免溢出 */
+  height: 95%; /* 让线条更长 */
   background-color: black;
   left: 50%;
-  top: 5%; /* 讓線條稍微內縮，避免超出外圈 */
+  top: 2%; /* 适当调整顶部位置 */
   transform-origin: center;
 }
 
