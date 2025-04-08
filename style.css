@@ -31,24 +31,24 @@ body {
 
 .outer-wheel {
   position: absolute;
-  width: 150%; /* 让外圈更大 */
-  height: 150%;
+  width: 140%; /* 外圈稍微縮小，避免過度佔用空間 */
+  height: 140%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -25%; /* 调整位置确保居中 */
-  top: -25%;
-  z-index: 5; /* 控制层级，确保外圈在底层 */
+  left: -20%; /* 重新調整居中 */
+  top: -20%;
+  z-index: 5;
 }
 
 .inner-wheel {
   position: absolute;
-  width: 80%; /* 保持内圈较小 */
+  width: 80%; /* 內圈保持較小 */
   height: 80%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  z-index: 10; /* 让内圈显示在外圈上层 */
+  z-index: 10;
 }
 
 .draggable:active {
@@ -58,11 +58,11 @@ body {
 /* 旋转盘上的放射线 */
 .line {
   position: absolute;
-  width: 2px; /* 线的宽度 */
-  height: 100%; /* 让线延伸到圆边 */
+  width: 2px;
+  height: 90%; /* 讓線條稍微縮短，避免溢出 */
   background-color: black;
   left: 50%;
-  top: 0;
+  top: 5%; /* 讓線條稍微內縮，避免超出外圈 */
   transform-origin: center;
 }
 
@@ -71,12 +71,12 @@ body {
   position: absolute;
   width: 50%;
   height: 50%;
-  background-color: white; /* 格子背景也是白色 */
+  background-color: white;
   border: 1px solid black;
-  transform-origin: 100% 100%;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 使格子呈现扇形 */
+  transform-origin: center;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
   
-  /* 文字居中显示 */
+  /* 讓文字正確顯示 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,6 +85,6 @@ body {
   color: black;
   text-align: center;
 
-  /* 提高层级，避免被线条覆盖 */
+/* 提高层级，避免被线条覆盖 */
   z-index: 10;
 }
