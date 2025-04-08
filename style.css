@@ -29,6 +29,17 @@ body {
   transition: transform 0.2s ease-out;
 }
 
+.outer-wheel {
+  position: absolute;
+  width: 200%; /* 外圈比内圈大 */
+  height: 200%; 
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid black;
+  left: -10%;
+  top: -10%;
+}
+
 .draggable:active {
   cursor: grabbing;
 }
