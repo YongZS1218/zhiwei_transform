@@ -1,32 +1,31 @@
-/* 頁面整體佈局 */
+/* 頁面佈局 */
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
   background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
 }
 
 /* 轉盤容器 */
 .wheel-container {
   position: relative;
-  width: 500px; /* 擴大容器尺寸 */
-  height: 500px;
+  width: min(90vw, 450px); /* 響應式設置，適應手機屏幕 */
+  height: min(90vw, 450px); /* 保持寬高一致，避免變形 */
 }
 
 /* 外圈轉盤 */
 .outer-wheel {
   position: absolute;
-  width: 180%; /* 讓外圈更大 */
+  width: 180%;
   height: 180%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
   left: -40%;
   top: -40%;
-  z-index: 5;
 }
 
 /* 內圈轉盤 */
@@ -37,14 +36,13 @@ body {
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  z-index: 10;
 }
 
-/* 放射線 */
+/* 放射線（分隔線） */
 .line {
   position: absolute;
   width: 2px;
-  height: 95%; /* 讓線條延伸到整個格子 */
+  height: 95%; /* 覆蓋整個半徑 */
   background-color: black;
   left: 50%;
   top: 2%;
@@ -54,24 +52,17 @@ body {
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 55%;
-  height: 55%;
-  background-color: transparent; /* 取消背景遮擋 */
-  border: none; /* 移除邊框 */
-  transform-origin: 100% 100%;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 保持扇形 */
-
-  /* 文字保持均勻分佈 */
+  width: 50%;
+  height: 50%;
+  background-color: transparent;
+  border: none;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 扇形裁剪 */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px; /* 讓文字稍微縮小 */
+  font-size: calc(10px + 0.5vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
-
-  /* 旋轉修正 */
-  transform: rotate(-15deg); /* 調整文字角度，避免擠壓 */
-
-  z-index: 15; /* 確保文字不被遮擋 */
+  transform-origin: 100% 100%;
 }
