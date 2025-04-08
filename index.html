@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>之調、爲調轉換轉盤</title>
+  <title>可拖動轉盤</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="wheel-container">
     <!-- 外圈 -->
     <div class="outer-wheel draggable">
-      <!-- 12 条线 -->
+      <!-- 分隔線 -->
       <div class="line" style="transform: rotate(0deg);"></div>
       <div class="line" style="transform: rotate(30deg);"></div>
       <div class="line" style="transform: rotate(60deg);"></div>
@@ -24,7 +24,7 @@
       <div class="line" style="transform: rotate(300deg);"></div>
       <div class="line" style="transform: rotate(330deg);"></div>
 
-      <!-- 12 格 -->
+      <!-- 外圈文字格子 -->
       <div class="segment" style="transform: rotate(0deg);">黃鐘</div>
       <div class="segment" style="transform: rotate(30deg);">大呂</div>
       <div class="segment" style="transform: rotate(60deg);">太簇</div>
@@ -39,9 +39,9 @@
       <div class="segment" style="transform: rotate(330deg);">應鐘</div>
     </div>
 
-    <!-- 内圈 -->
+    <!-- 內圈 -->
     <div class="inner-wheel draggable">
-      <!-- 12 条线 -->
+      <!-- 分隔線 -->
       <div class="line" style="transform: rotate(0deg);"></div>
       <div class="line" style="transform: rotate(30deg);"></div>
       <div class="line" style="transform: rotate(60deg);"></div>
@@ -55,7 +55,7 @@
       <div class="line" style="transform: rotate(300deg);"></div>
       <div class="line" style="transform: rotate(330deg);"></div>
 
-      <!-- 12 格 -->
+      <!-- 內圈文字格子 -->
       <div class="segment" style="transform: rotate(0deg);">宮</div>
       <div class="segment" style="transform: rotate(30deg);"> </div>
       <div class="segment" style="transform: rotate(60deg);">商</div>
@@ -67,7 +67,7 @@
       <div class="segment" style="transform: rotate(240deg);"> </div>
       <div class="segment" style="transform: rotate(270deg);">羽</div>
       <div class="segment" style="transform: rotate(300deg);">清羽</div>
-      <div class="segment" style="transform: rotate(330deg);">變宫</div>
+      <div class="segment" style="transform: rotate(330deg);">變宮</div>
     </div>
   </div>
   <script src="script.js"></script>
