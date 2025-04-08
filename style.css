@@ -54,24 +54,24 @@ body {
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 60%;
-  height: 60%;
-  background-color: transparent; /* 確保格子背景透明，不遮擋轉盤 */
-  border: none; /* 移除多餘的邊框 */
-  transform-origin: center;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 使格子呈扇形 */
-  
-  /* 讓文字均勻分布，並居中顯示 */
+  width: 55%;
+  height: 55%;
+  background-color: transparent; /* 取消背景遮擋 */
+  border: none; /* 移除邊框 */
+  transform-origin: 100% 100%;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 保持扇形 */
+
+  /* 文字保持均勻分佈 */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px; /* 讓文字稍微縮小，避免溢出 */
+  font-size: 10px; /* 讓文字稍微縮小 */
   font-weight: bold;
   color: black;
   text-align: center;
 
-  /* 避免文字偏移 */
-  transform: rotate(0deg);
+  /* 旋轉修正 */
+  transform: rotate(-15deg); /* 調整文字角度，避免擠壓 */
 
-  z-index: 15; /* 確保文字在最上層 */
+  z-index: 15; /* 確保文字不被遮擋 */
 }
