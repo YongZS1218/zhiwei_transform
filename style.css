@@ -1,4 +1,4 @@
-/* 页面整体布局 */
+/* 頁面整體佈局 */
 body {
   display: flex;
   align-items: center;
@@ -9,17 +9,17 @@ body {
   background-color: #f8f9fa;
 }
 
-/* 转盘容器 */
+/* 轉盤容器 */
 .wheel-container {
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 500px; /* 擴大容器尺寸 */
+  height: 500px;
 }
 
-/* 外圈转盘 */
+/* 外圈轉盤 */
 .outer-wheel {
   position: absolute;
-  width: 180%;
+  width: 180%; /* 讓外圈更大 */
   height: 180%;
   border-radius: 50%;
   background-color: white;
@@ -29,7 +29,7 @@ body {
   z-index: 5;
 }
 
-/* 内圈转盘 */
+/* 內圈轉盤 */
 .inner-wheel {
   position: absolute;
   width: 100%;
@@ -40,36 +40,38 @@ body {
   z-index: 10;
 }
 
-/* 放射线 */
+/* 放射線 */
 .line {
   position: absolute;
   width: 2px;
-  height: 95%;
+  height: 95%; /* 讓線條延伸到整個格子 */
   background-color: black;
   left: 50%;
   top: 2%;
   transform-origin: center;
 }
 
-/* 格子样式 */
+/* 格子樣式 */
 .segment {
   position: absolute;
-  width: 55%;
-  height: 55%;
-  background-color: transparent; /* 取消背景遮挡 */
-  border: none; /* 删除多余的边框 */
-  transform-origin: 100% 100%;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  width: 60%;
+  height: 60%;
+  background-color: transparent; /* 確保格子背景透明，不遮擋轉盤 */
+  border: none; /* 移除多餘的邊框 */
+  transform-origin: center;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 使格子呈扇形 */
   
-  /* 让文字均匀分布，并随格子旋转 */
+  /* 讓文字均勻分布，並居中顯示 */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px; /* 适当缩小字体，以完整显示 */
+  font-size: 10px; /* 讓文字稍微縮小，避免溢出 */
   font-weight: bold;
   color: black;
   text-align: center;
-  transform: rotate(-15deg); /* 让文字正确对齐 */
 
-  z-index: 5;
+  /* 避免文字偏移 */
+  transform: rotate(0deg);
+
+  z-index: 15; /* 確保文字在最上層 */
 }
