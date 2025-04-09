@@ -53,7 +53,7 @@ body {
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 50%; /* 調整格子大小適應圓周 */
+  width: 50%; /* 格子的大小 */
   height: 50%;
   background-color: transparent;
   border: none;
@@ -63,11 +63,10 @@ body {
   display: flex;
   align-items: flex-end; /* 垂直方向靠近圓周 */
   justify-content: center; /* 水平方向居中 */
-  font-size: calc(7px + 0.5vw); /* 響應式字體大小 */
+  font-size: calc(8px + 0.5vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
 
-  transform-origin: center bottom; /* 修正拼寫錯誤，正確設置旋轉中心 */
-  transform: rotate(var(--angle)); /* 使用CSS變數設置格子的旋轉角度 */
+  transform-origin: center center; /* 旋轉中心設置於圓心 */
 }
