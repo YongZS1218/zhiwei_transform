@@ -12,31 +12,31 @@ body {
 /* 轉盤容器 */
 .wheel-container {
   position: relative;
-  width: min(75vw, 300px); /* 再次減小轉盤最大寬度 */
-  height: min(75vw, 300px); /* 保持圓形比例，適應小屏幕 */
-  overflow: visible; /* 移除裁剪限制 */
+  width: min(70vw, 250px); /* 進一步縮小轉盤最大寬度 */
+  height: min(70vw, 250px); /* 高度與寬度保持一致 */
+  overflow: visible; /* 防止內容被裁剪 */
 }
 
 .outer-wheel {
   position: absolute;
-  width: 140%; /* 縮小外圈比例 */
-  height: 140%;
+  width: 130%; /* 縮小外圈比例，防止超出容器 */
+  height: 130%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -20%; /* 校正外圈位置確保居中 */
-  top: -20%;
+  left: -15%; /* 校正位置確保外圈居中 */
+  top: -15%;
 }
 
 .inner-wheel {
   position: absolute;
-  width: 85%; /* 縮小內圈比例 */
-  height: 85%;
+  width: 80%; /* 縮小內圈 */
+  height: 80%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: 7.5%; /* 校正位置使其居中 */
-  top: 7.5%;
+  left: 10%; /* 內圈居中 */
+  top: 10%;
 }
 
 /* 放射線（分隔線） */
@@ -53,21 +53,21 @@ body {
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 55%; /* 調整格子大小適應文字 */
-  height: 55%;
+  width: 50%; /* 調整格子大小適應圓周 */
+  height: 50%;
   background-color: transparent;
   border: none;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 扇形裁剪 */
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 保持扇形裁剪 */
 
   /* 文字設置 */
   display: flex;
   align-items: flex-end; /* 垂直方向靠近圓周 */
   justify-content: center; /* 水平方向居中 */
-  font-size: calc(6px + 0.4vw); /* 降低字體大小 */
+  font-size: calc(5px + 0.3vw); /* 進一步降低字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
 
-  transform-origin: 50% 98%; /* 調整旋轉中心靠近圓周外端 */
-  transform: rotate(0deg); /* 初始化角度，隨格子旋轉 */
+  transform-origin: 50% 90%; /* 調整旋轉中心至圓周附近 */
+  transform: rotate(0deg); /* 初始化角度 */
 }
