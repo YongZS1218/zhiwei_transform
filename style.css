@@ -27,7 +27,6 @@ body {
   border: 3px solid black;
   left: -15%;
   top: -15%;
-  transform-origin: center; /* 圓心旋轉 */
 }
 
 /* 內圈轉盤 */
@@ -40,14 +39,13 @@ body {
   border: 3px solid black;
   left: 10%;
   top: 10%;
-  transform-origin: center; /* 圓心旋轉 */
 }
 
 /* 放射線（分隔線） */
 .line {
   position: absolute;
-  width: 1px;
-  height: 100%;
+  width: 1px; /* 線條寬度 */
+  height: 100%; /* 延伸到整個轉盤邊緣 */
   background-color: black;
   left: 50%;
   top: 0%;
@@ -57,21 +55,21 @@ body {
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 50%; /* 格子大小 */
+  width: 50%; /* 格子的大小 */
   height: 50%;
   background-color: transparent;
   border: none;
-  clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%);
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 更精確的扇形裁剪 */
 
   /* 文字設置 */
   display: flex;
-  align-items: flex-end; /* 垂直方向靠近圓周 */
+  align-items: flex-end; /* 垂直方向靠近扇形外端 */
   justify-content: center; /* 水平方向居中 */
-  font-size: calc(6px + 0.4vw);
+  font-size: calc(7px + 0.5vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
 
-  transform-origin: 50% 90%; /* 修正旋轉中心，靠近扇形外端 */
-  transform: rotate(0deg); /* 文字初始旋轉角度 */
+  transform-origin: 50% 50%; /* 修正文字旋轉中心，對準扇形的圓心 */
+  transform: rotate(0deg); /* 初始旋轉角度 */
 }
