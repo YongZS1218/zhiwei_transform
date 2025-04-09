@@ -12,31 +12,27 @@ body {
 /* 轉盤容器 */
 .wheel-container {
   position: relative;
-  width: min(90vw, 450px); /* 響應式設置，適應手機屏幕 */
-  height: min(90vw, 450px); /* 保持寬高一致，避免變形 */
-  overflow: visible;
+  width: min(85vw, 400px); /* 降低轉盤最大寬度以適應更小屏幕 */
+  height: min(85vw, 400px); /* 確保高度與寬度一致，保持圓形比例 */
+  overflow: visible; /* 保證轉盤不被裁剪 */
 }
 
-/* 外圈轉盤 */
 .outer-wheel {
   position: absolute;
-  width: 180%;
-  height: 180%;
+  width: 160%; /* 縮小外圈比例，避免超出容器 */
+  height: 160%;
   border-radius: 50%;
-  transform-origin: center;
   background-color: white;
   border: 3px solid black;
-  left: -40%;
-  top: -40%;
+  left: -30%; /* 重新校正位置確保居中 */
+  top: -30%;
 }
 
-/* 內圈轉盤 */
 .inner-wheel {
   position: absolute;
-  width: 100%;
+  width: 100%; /* 維持內圈為容器大小 */
   height: 100%;
   border-radius: 50%;
-  transform-origin: center;
   background-color: white;
   border: 3px solid black;
 }
@@ -55,20 +51,21 @@ body {
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 60%; /* 增加格子寬度 */
-  height: 60%; /* 增加格子高度 */
+  width: 50%; /* 格子的大小 */
+  height: 50%;
   background-color: transparent;
   border: none;
-  clip-path: polygon(40% 40%, 100% 0, 100% 100%, 40% 100%); /* 保持扇形 */
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 扇形裁剪 */
 
-  /* 文字設置 */
+  /* 文字靠近扇形外側 */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(6px + 0.8vw); /* 響應式字體大小 */
+  align-items: flex-end; /* 讓文字貼近格子底部（圓周外端） */
+  justify-content: center; /* 確保文字水平居中 */
+  font-size: calc(10px + 0.5vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
-  transform-origin: center;
-  transform: rotate(-15deg); /* 調整文字角度，使其跟隨格子 */
+
+  transform-origin: center bottom; /* 讓文字以扇形外端為中心 */
+  transform: rotate(0deg); /* 起始角度 */
 }
