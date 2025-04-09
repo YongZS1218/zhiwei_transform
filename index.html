@@ -10,7 +10,7 @@
   <div class="wheel-container">
     <!-- 外圈 -->
     <div class="outer-wheel draggable">
-      <!-- 分隔線 -->
+      <!-- 分隔線（角度寫死即可） -->
       <div class="line" style="transform: rotate(0deg);"></div>
       <div class="line" style="transform: rotate(30deg);"></div>
       <div class="line" style="transform: rotate(60deg);"></div>
@@ -24,19 +24,19 @@
       <div class="line" style="transform: rotate(300deg);"></div>
       <div class="line" style="transform: rotate(330deg);"></div>
 
-      <!-- 外圈文字格子 -->
-      <div class="segment" style="transform: rotate(0deg);">黃鐘</div>
-      <div class="segment" style="transform: rotate(30deg);">大呂</div>
-      <div class="segment" style="transform: rotate(60deg);">太簇</div>
-      <div class="segment" style="transform: rotate(90deg);">夾鐘</div>
-      <div class="segment" style="transform: rotate(120deg);">姑洗</div>
-      <div class="segment" style="transform: rotate(150deg);">仲呂</div>
-      <div class="segment" style="transform: rotate(180deg);">蕤賓</div>
-      <div class="segment" style="transform: rotate(210deg);">林鐘</div>
-      <div class="segment" style="transform: rotate(240deg);">夷則</div>
-      <div class="segment" style="transform: rotate(270deg);">南呂</div>
-      <div class="segment" style="transform: rotate(300deg);">無射</div>
-      <div class="segment" style="transform: rotate(330deg);">應鐘</div>
+      <!-- 外圈文字格子，無行內 transform -->
+      <div class="segment">黃鐘</div>
+      <div class="segment">大呂</div>
+      <div class="segment">太簇</div>
+      <div class="segment">夾鐘</div>
+      <div class="segment">姑洗</div>
+      <div class="segment">仲呂</div>
+      <div class="segment">蕤賓</div>
+      <div class="segment">林鐘</div>
+      <div class="segment">夷則</div>
+      <div class="segment">南呂</div>
+      <div class="segment">無射</div>
+      <div class="segment">應鐘</div>
     </div>
 
     <!-- 內圈 -->
@@ -55,20 +55,19 @@
       <div class="line" style="transform: rotate(300deg);"></div>
       <div class="line" style="transform: rotate(330deg);"></div>
 
-
-      <!-- 內圈文字格子 -->
-      <div class="segment" style="transform: rotate(0deg);">宮</div>
-      <div class="segment" style="transform: rotate(30deg);"> </div>
-      <div class="segment" style="transform: rotate(60deg);">商</div>
-      <div class="segment" style="transform: rotate(90deg);"> </div>
-      <div class="segment" style="transform: rotate(120deg);">角</div>
-      <div class="segment" style="transform: rotate(150deg);">清角</div>
-      <div class="segment" style="transform: rotate(180deg);">變徵</div>
-      <div class="segment" style="transform: rotate(210deg);">徵</div>
-      <div class="segment" style="transform: rotate(240deg);"> </div>
-      <div class="segment" style="transform: rotate(270deg);">羽</div>
-      <div class="segment" style="transform: rotate(300deg);">清羽</div>
-      <div class="segment" style="transform: rotate(330deg);">變宮</div>
+      <!-- 內圈文字格子，無行內 transform，注意有些格子是空的 -->
+      <div class="segment">宮</div>
+      <div class="segment"></div>
+      <div class="segment">商</div>
+      <div class="segment"></div>
+      <div class="segment">角</div>
+      <div class="segment">清角</div>
+      <div class="segment">變徵</div>
+      <div class="segment">徵</div>
+      <div class="segment"></div>
+      <div class="segment">羽</div>
+      <div class="segment">清羽</div>
+      <div class="segment">變宮</div>
     </div>
   </div>
   <script src="script.js"></script>
