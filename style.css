@@ -20,7 +20,7 @@ body {
 /* 外圈轉盤 */
 .outer-wheel {
   position: absolute;
-  width: 130%;
+  width: 130%; /* 外圈比例 */
   height: 130%;
   border-radius: 50%;
   background-color: white;
@@ -32,7 +32,7 @@ body {
 /* 內圈轉盤 */
 .inner-wheel {
   position: absolute;
-  width: 80%;
+  width: 80%; /* 內圈比例 */
   height: 80%;
   border-radius: 50%;
   background-color: white;
@@ -59,17 +59,17 @@ body {
   height: 50%;
   background-color: transparent;
   border: none;
-  clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); /* 按要求調整裁剪範圍 */
+  clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); /* 扇形裁剪 */
 
   /* 文字設置 */
   display: flex;
-  align-items: flex-end; /* 垂直方向靠近扇形外端 */
-  justify-content: center; /* 水平方向居中 */
+  align-items: center; /* 垂直方向居中 */
+  justify-content: flex-start; /* 將文字靠近扇形弧邊 */
   font-size: calc(6px + 0.4vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
 
-  transform-origin: 50% 100%; /* 修正旋轉中心，對準扇形的圓心 */
+  transform-origin: 50% 50%; /* 修正旋轉中心為扇形的圓心 */
   transform: rotate(0deg); /* 初始旋轉角度 */
 }
