@@ -26,6 +26,8 @@ body {
   border: 3px solid black;
   left: -15%;
   top: -15%;
+  /* 確保外圈在內圈之下 */
+  z-index: 1;
 }
 
 /* 內圈轉盤 */
@@ -38,8 +40,8 @@ body {
   border: 3px solid black;
   left: 10%;
   top: 10%;
-  /* 確保內圈在最下方 */
-  z-index: -1;
+  /* 確保內圈在外圈之上 */
+  z-index: 2;
 }
 
 /* 放射線（分隔線） */
