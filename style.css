@@ -12,25 +12,25 @@ body {
 /* 轉盤容器 */
 .wheel-container {
   position: relative;
-  width: min(70vw, 250px); /* 恢復轉盤最大寬度 */
+  width: min(70vw, 250px); /* 保持轉盤最大寬度 */
   height: min(70vw, 250px); /* 高度與寬度保持一致 */
   overflow: visible; /* 防止內容被裁剪 */
 }
 
 .outer-wheel {
   position: absolute;
-  width: 130%; /* 恢復外圈比例 */
+  width: 130%; /* 外圈比例 */
   height: 130%;
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -15%; /* 確保外圈居中 */
+  left: -15%; /* 外圈居中 */
   top: -15%;
 }
 
 .inner-wheel {
   position: absolute;
-  width: 80%; /* 恢復內圈比例 */
+  width: 80%; /* 內圈比例 */
   height: 80%;
   border-radius: 50%;
   background-color: white;
@@ -43,7 +43,7 @@ body {
 .line {
   position: absolute;
   width: 1px; /* 線條寬度 */
-  height: 100%; /* 延伸到整個轉盤邊緣 */
+  height: 100%; /* 延伸到轉盤邊緣 */
   background-color: black;
   left: 50%;
   top: 0%;
@@ -53,7 +53,7 @@ body {
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 50%; /* 格子的大小 */
+  width: 50%; /* 格子大小 */
   height: 50%;
   background-color: transparent;
   border: none;
@@ -61,12 +61,13 @@ body {
 
   /* 文字設置 */
   display: flex;
-  align-items: center; /* 垂直方向居中 */
-  justify-content: center; /* 水平方向居中 */
-  font-size: calc(7px + 0.5vw); /* 提高字體大小以適應格子 */
+  align-items: flex-end; /* 將文字垂直對齊在格子底部 */
+  justify-content: center; /* 將文字水平居中 */
+  font-size: calc(6px + 0.4vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
 
-  transform-origin: center; /* 重置旋轉中心為圓心 */
+  transform-origin: 50% 100%; /* 修正旋轉中心至扇形最外端 */
+  transform: rotate(0deg); /* 初始旋轉角度 */
 }
