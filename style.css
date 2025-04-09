@@ -64,6 +64,6 @@ body {
   font-weight: bold;
   color: black;
   text-align: center;
-  /* 如有需要，可加入 clip-path 設定扇形效果 */
+  /* 若有需要，可加入 clip-path 設定扇形效果 */
   /* clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); */
 }
