@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   innerSegments.forEach((seg, index) => {
     const anglePerSegment = 360 / innerCount;
     // 將初始角度偏移半個格子的角度，並添加一個小的調整值（例如 -5 度）
-    let angle = index * anglePerSegment + anglePerSegment / 2 - 5;
+    let angle = index * anglePerSegment + anglePerSegment / 2 - 7;
     const text = seg.textContent.trim(); // 取得文字內容並去除空白
     let translateValue = 165; // 預設值
 
