@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let translateValue = 165; // 預設值
 
     if (text.length === 1) {
-      translateValue = 320; // 單字平移較多
+      translateValue = 360; // 單字平移較多
     } else if (text.length === 2) {
       translateValue = 160; // 雙字平移較少
     } else if (text.length === 0) {
