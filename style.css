@@ -57,16 +57,16 @@ body {
   height: 50%;
   background-color: transparent;
   border: none;
-  clip-path: polygon(45% 45%, 100% 0, 100% 100%, 45% 100%); /* 扇形裁剪 */
+  clip-path: polygon(40% 40%, 100% 0, 100% 100%, 40% 100%); /* 扇形裁剪 */
 
   /* 文字設置 */
   display: flex;
   align-items: flex-end; /* 垂直方向靠近圓周 */
   justify-content: center; /* 水平方向居中 */
-  font-size: calc(8px + 0.5vw); /* 響應式字體大小 */
+  font-size: calc(5px + 0.4vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
 
-  transform-origin: center center; /* 旋轉中心設置於圓心 */
+  transform-origin: 50% 85%; /* 旋轉中心設置於圓心 */
 }
