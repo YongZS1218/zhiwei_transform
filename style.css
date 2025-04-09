@@ -12,15 +12,14 @@ body {
 /* 轉盤容器 */
 .wheel-container {
   position: relative;
-  width: min(70vw, 250px); /* 保持轉盤最大寬度 */
-  height: min(70vw, 250px); /* 高度與寬度保持一致 */
-  overflow: visible; /* 防止內容被裁剪 */
+  width: min(70vw, 250px);
+  height: min(70vw, 250px);
 }
 
 /* 外圈轉盤 */
 .outer-wheel {
   position: absolute;
-  width: 130%; /* 外圈比例 */
+  width: 130%;
   height: 130%;
   border-radius: 50%;
   background-color: white;
@@ -32,7 +31,7 @@ body {
 /* 內圈轉盤 */
 .inner-wheel {
   position: absolute;
-  width: 80%; /* 內圈比例 */
+  width: 80%;
   height: 80%;
   border-radius: 50%;
   background-color: white;
@@ -48,28 +47,23 @@ body {
   height: 100%;
   background-color: black;
   left: 50%;
-  top: 0%;
+  top: 0;
   transform-origin: center;
 }
 
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 50%; /* 格子大小 */
-  height: 50%;
-  background-color: transparent;
-  border: none;
-  clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); /* 放寬扇形裁剪範圍 */
-
-  /* 文字設置 */
-  display: flex;
-  align-items: center; /* 垂直方向居中 */
-  justify-content: center; /* 水平方向居中 */
-  font-size: calc(6px + 0.4vw); /* 響應式字體大小 */
+  /* 將定位設在轉盤中心 */
+  left: 50%;
+  top: 50%;
+  /* 讓每個扇區以其左側做旋轉基準 */
+  transform-origin: 0 0;
+  /* 文字樣式 */
+  font-size: calc(6px + 0.4vw);
   font-weight: bold;
   color: black;
   text-align: center;
-
-  transform-origin: 50% 50%; /* 以扇形圓心為旋轉中心 */
-  transform: rotate(0deg) translate(90%); /* 調整旋轉與位移，使文字分布於弧邊 */
+  /* 如有需要，可加入 clip-path 設定扇形效果 */
+  /* clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); */
 }
