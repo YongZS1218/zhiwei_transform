@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 支持觸屏事件
     wheel.addEventListener('touchstart', startDragTouch);
-    window.addEventListener('touchmove', dragWheelTouch);
+    window.addEventListener('touchmove', dragWheelTouch, { passive: false });
     window.addEventListener('touchend', stopDrag);
 
     // 鼠標拖動起始
