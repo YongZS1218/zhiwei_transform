@@ -2,20 +2,20 @@ document.addEventListener('DOMContentLoaded', function() {
   // 為外圈每個扇形自動配置 transform
   const outerSegments = document.querySelectorAll('.outer-wheel .segment');
   const outerCount = outerSegments.length;
-  document.documentElement.style.setProperty('--outerCount', outerCount);
   outerSegments.forEach((seg, index) => {
     const anglePerSegment = 360 / outerCount;
+    // 將初始角度偏移半個格子的角度
     let angle = index * anglePerSegment + anglePerSegment / 2;
+    // 移除反向旋轉
     seg.style.transform = `rotate(${angle}deg) translate(390%)`;
-    seg.style.setProperty('--index', index); // 儲存 index 供 CSS 使用
   });
 
   // 為內圈每個扇形自動配置 transform
   const innerSegments = document.querySelectorAll('.inner-wheel .segment');
   const innerCount = innerSegments.length;
-  document.documentElement.style.setProperty('--innerCount', innerCount);
   innerSegments.forEach((seg, index) => {
     const anglePerSegment = 360 / innerCount;
+    // 將初始角度偏移半個格子的角度，並添加一個小的調整值（例如 -7 度）
     let angle = index * anglePerSegment + anglePerSegment / 2 - 7;
     const text = seg.textContent.trim(); // 取得文字內容並去除空白
     let translateValue = 165; // 預設值
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     seg.style.transform = `rotate(${angle}deg) translate(${translateValue}%)`;
   });
-});
 
   // 原有轉盤拖拽功能
   document.querySelectorAll('.draggable').forEach(wheel => {
