@@ -10,21 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
     seg.style.transform = `rotate(${angle}deg) translate(390%)`;
   });
 
-    // 為內圈每個扇形自動配置 transform
+  // 為內圈每個扇形自動配置 transform
   const innerSegments = document.querySelectorAll('.inner-wheel .segment');
   const innerCount = innerSegments.length;
   innerSegments.forEach((seg, index) => {
     const anglePerSegment = 360 / innerCount;
-    const angle = index * anglePerSegment + anglePerSegment / 2;
+    // 將初始角度偏移半個格子的角度，並添加一個小的調整值（例如 -5 度）
+    let angle = index * anglePerSegment + anglePerSegment / 2 - 5;
     const text = seg.textContent.trim(); // 取得文字內容並去除空白
     let translateValue = 165; // 預設值
 
     if (text.length === 1) {
-      translateValue = 360; // 單字平移較多
+      translateValue = 370; // 單字平移較多
     } else if (text.length === 2) {
-      translateValue = 160; // 雙字平移較少
+      translateValue = 165; // 雙字平移較少
     } else if (text.length === 0) {
-      translateValue = 0; // 空格可以設定一個較小的值，或者根據需要調整
+      translateValue = 0; // 空格
     }
 
     seg.style.transform = `rotate(${angle}deg) translate(${translateValue}%)`;
