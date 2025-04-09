@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Minh Nguyen'; /* 您希望在 CSS 中使用的字體名稱 */
+  src: url('fonts/Minh-Nguyen-Regular.woff2') format('woff2'), /* .woff2 格式（如果有的話） */
+       url('fonts/Minh-Nguyen-Regular.woff') format('woff');   /* .woff 格式 */
+  font-weight: normal; /* 字體粗細，可以根據您的字體文件調整 */
+  font-style: normal;  /* 字體樣式，例如斜體等 */
+}
+
 /* 頁面佈局 */
 body {
   display: flex;
@@ -68,6 +76,7 @@ body {
   font-weight: bold;
   color: black;
   text-align: center;
+  font-family: 'Minh Nguyen', serif; /* 使用您在 @font-face 中定義的字體名稱 */
   /* 若有需要，可加入 clip-path 設定扇形效果 */
   /* clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); */
 }
