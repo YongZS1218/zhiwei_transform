@@ -52,26 +52,24 @@ body {
   transform-origin: center;
 }
 
-/* 格子样式 */
+/* 格子樣式 */
 .segment {
   position: absolute;
   width: 50%; /* 格子大小 */
   height: 50%;
   background-color: transparent;
   border: none;
-  clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); /* 扇形裁剪 */
+  clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); /* 放寬扇形裁剪範圍 */
 
-  /* 文字设置 */
+  /* 文字設置 */
   display: flex;
   align-items: center; /* 垂直方向居中 */
   justify-content: center; /* 水平方向居中 */
-  font-size: calc(6px + 0.5vw); /* 响应式字体大小 */
+  font-size: calc(6px + 0.4vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
 
-  transform-origin: center; /* 修正旋转中心为扇形圆心 */
-  transform: rotate(0deg); /* 初始旋转角度 */
-  /* 修正文字位置，使其沿弧边分布 */
-  margin-top: 15%;
+  transform-origin: 50% 50%; /* 以扇形圓心為旋轉中心 */
+  transform: rotate(0deg) translate(90%); /* 調整旋轉與位移，使文字分布於弧邊 */
 }
