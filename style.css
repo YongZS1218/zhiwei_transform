@@ -26,8 +26,6 @@ body {
   border: 3px solid black;
   left: -15%;
   top: -15%;
-  /* 確保外圈在內圈之上 */
-  z-index: 10;
 }
 
 /* 內圈轉盤 */
@@ -40,7 +38,8 @@ body {
   border: 3px solid black;
   left: 10%;
   top: 10%;
-  /* 內圈的 z-index 可以比外圈小，或者不設定（預設為 auto） */
+  /* 確保內圈在最下方 */
+  z-index: -1;
 }
 
 /* 放射線（分隔線） */
