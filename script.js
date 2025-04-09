@@ -3,18 +3,22 @@ document.addEventListener('DOMContentLoaded', function() {
   const outerSegments = document.querySelectorAll('.outer-wheel .segment');
   const outerCount = outerSegments.length;
   outerSegments.forEach((seg, index) => {
-    let angle = index * (360 / outerCount);
-    // 增加外圈文字的 translate 值
-    seg.style.transform = `rotate(${angle}deg) translate(200%) rotate(-${angle}deg)`;
+    const anglePerSegment = 360 / outerCount;
+    // 將初始角度偏移半個格子的角度
+    let angle = index * anglePerSegment + anglePerSegment / 2;
+    // 移除反向旋轉
+    seg.style.transform = `rotate(${angle}deg) translate(240%)`;
   });
 
   // 為內圈每個扇形自動配置 transform
   const innerSegments = document.querySelectorAll('.inner-wheel .segment');
   const innerCount = innerSegments.length;
   innerSegments.forEach((seg, index) => {
-    let angle = index * (360 / innerCount);
-    // 增加內圈文字的 translate 值
-    seg.style.transform = `rotate(${angle}deg) translate(120%) rotate(-${angle}deg)`;
+    const anglePerSegment = 360 / innerCount;
+    // 將初始角度偏移半個格子的角度
+    let angle = index * anglePerSegment + anglePerSegment / 2;
+    // 移除反向旋轉
+    seg.style.transform = `rotate(${angle}deg) translate(160%)`;
   });
 
   // 原有轉盤拖拽功能
