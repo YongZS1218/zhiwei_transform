@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 將初始角度偏移半個格子的角度
     let angle = index * anglePerSegment + anglePerSegment / 2;
     // 移除反向旋轉
-    seg.style.transform = `rotate(${angle}deg) translate(350%)`;
+    seg.style.transform = `rotate(${angle}deg) translate(400%)`;
   });
 
   // 為內圈每個扇形自動配置 transform
