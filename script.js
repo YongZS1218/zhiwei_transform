@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let angle = index * (360 / outerCount);
     // 第一個 rotate 將扇區定位到對應位置，translate 將文字向外移動，
     // 第二個 rotate(-angle) 使文字方向保持水平（不跟著轉）
-    seg.style.transform = `rotate(${angle}deg) translate(150%) rotate(-${angle}deg)`;
+    seg.style.transform = `rotate(${angle}deg) translate(170%) rotate(-${angle}deg)`;
   });
 
   // 為內圈每個扇形自動配置 transform
@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 觸屏拖動過程
     function dragWheelTouch(e) {
       if (!isDragging) return;
+      e.preventDefault();
       const touch = e.touches[0];
       const newAngle = Math.atan2(touch.clientY - center.y, touch.clientX - center.x) * (180 / Math.PI);
       currentAngle += newAngle - startAngle;
