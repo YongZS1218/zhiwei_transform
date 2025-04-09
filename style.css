@@ -14,6 +14,7 @@ body {
   position: relative;
   width: min(90vw, 450px); /* 響應式設置，適應手機屏幕 */
   height: min(90vw, 450px); /* 保持寬高一致，避免變形 */
+  overflow: hidden;
 }
 
 /* 外圈轉盤 */
@@ -54,17 +55,17 @@ body {
 /* 格子樣式 */
 .segment {
   position: absolute;
-  width: 55%; /* 增加格子寬度 */
-  height: 55%; /* 增加格子高度 */
+  width: 60%; /* 增加格子寬度 */
+  height: 60%; /* 增加格子高度 */
   background-color: transparent;
   border: none;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 保持扇形 */
+  clip-path: polygon(40% 40%, 100% 0, 100% 100%, 40% 100%); /* 保持扇形 */
 
   /* 文字設置 */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(8px + 1vw); /* 響應式字體大小 */
+  font-size: calc(6px + 0.8vw); /* 響應式字體大小 */
   font-weight: bold;
   color: black;
   text-align: center;
