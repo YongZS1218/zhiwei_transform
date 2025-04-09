@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 支持鼠標事件
     wheel.addEventListener('mousedown', startDragMouse);
-    window.addEventListener('mousemove', dragWheelMouse, { passive: false });
+    window.addEventListener('mousemove', dragWheelMouse);
     window.addEventListener('mouseup', stopDrag);
 
     // 支持觸屏事件
@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 鼠標拖動過程
     function dragWheelMouse(e) {
       if (!isDragging) return;
-      e.preventDefault();
       const newAngle = Math.atan2(e.clientY - center.y, e.clientX - center.x) * (180 / Math.PI);
       currentAngle += newAngle - startAngle;
       startAngle = newAngle;
