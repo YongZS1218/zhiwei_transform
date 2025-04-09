@@ -14,7 +14,7 @@ body {
   position: relative;
   width: min(90vw, 450px); /* 響應式設置，適應手機屏幕 */
   height: min(90vw, 450px); /* 保持寬高一致，避免變形 */
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* 外圈轉盤 */
@@ -69,6 +69,6 @@ body {
   font-weight: bold;
   color: black;
   text-align: center;
-  transform-origin: 100% 100%;
+  transform-origin: center;
   transform: rotate(-15deg); /* 調整文字角度，使其跟隨格子 */
 }
