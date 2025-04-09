@@ -17,6 +17,7 @@ body {
   overflow: visible; /* 防止內容被裁剪 */
 }
 
+/* 外圈轉盤 */
 .outer-wheel {
   position: absolute;
   width: 130%; /* 外圈比例 */
@@ -24,10 +25,12 @@ body {
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -15%; /* 外圈居中 */
+  left: -15%;
   top: -15%;
+  transform-origin: center; /* 圓心旋轉 */
 }
 
+/* 內圈轉盤 */
 .inner-wheel {
   position: absolute;
   width: 80%; /* 內圈比例 */
@@ -35,15 +38,16 @@ body {
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: 10%; /* 內圈居中 */
+  left: 10%;
   top: 10%;
+  transform-origin: center; /* 圓心旋轉 */
 }
 
 /* 放射線（分隔線） */
 .line {
   position: absolute;
-  width: 1px; /* 線條寬度 */
-  height: 100%; /* 延伸到轉盤邊緣 */
+  width: 1px;
+  height: 100%;
   background-color: black;
   left: 50%;
   top: 0%;
@@ -57,17 +61,17 @@ body {
   height: 50%;
   background-color: transparent;
   border: none;
-  clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); /* 放寬裁剪範圍 */
+  clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%);
 
   /* 文字設置 */
   display: flex;
-  align-items: flex-end; /* 將文字垂直對齊在格子底部 */
-  justify-content: center; /* 將文字水平居中 */
-  font-size: calc(6px + 0.4vw); /* 響應式字體大小 */
+  align-items: flex-end; /* 垂直方向靠近圓周 */
+  justify-content: center; /* 水平方向居中 */
+  font-size: calc(6px + 0.4vw);
   font-weight: bold;
   color: black;
   text-align: center;
 
-  transform-origin: 50% 100%; /* 修正旋轉中心至扇形最外端 */
-  transform: rotate(0deg); /* 初始旋轉角度 */
+  transform-origin: 50% 90%; /* 修正旋轉中心，靠近扇形外端 */
+  transform: rotate(0deg); /* 文字初始旋轉角度 */
 }
