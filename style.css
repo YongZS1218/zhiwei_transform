@@ -72,7 +72,7 @@ body {
   /* 讓每個扇區以其左側做旋轉基準 */
   transform-origin: 0 0;
   /* 文字樣式 */
-  font-size: calc(1.5vw);
+  font-size: calc(0.8em);
   font-weight: bold;
   color: black;
   text-align: center;
