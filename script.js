@@ -4,9 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const outerCount = outerSegments.length;
   outerSegments.forEach((seg, index) => {
     let angle = index * (360 / outerCount);
-    // 第一個 rotate 將扇區定位到對應位置，translate 將文字向外移動，
-    // 第二個 rotate(-angle) 使文字方向保持水平（不跟著轉）
-    seg.style.transform = `rotate(${angle}deg) translate(170%) rotate(-${angle}deg)`;
+    // 增加外圈文字的 translate 值
+    seg.style.transform = `rotate(${angle}deg) translate(200%) rotate(-${angle}deg)`;
   });
 
   // 為內圈每個扇形自動配置 transform
@@ -14,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const innerCount = innerSegments.length;
   innerSegments.forEach((seg, index) => {
     let angle = index * (360 / innerCount);
-    // 內圈用較小的平移值，例如 70%
-    seg.style.transform = `rotate(${angle}deg) translate(100%) rotate(-${angle}deg)`;
+    // 增加內圈文字的 translate 值
+    seg.style.transform = `rotate(${angle}deg) translate(120%) rotate(-${angle}deg)`;
   });
 
   // 原有轉盤拖拽功能
