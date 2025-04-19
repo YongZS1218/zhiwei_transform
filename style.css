@@ -1,7 +1,6 @@
 @font-face {
-  font-family: 'Minh Nguyen'; /* 您希望在 CSS 中使用的字體名稱 */
-  src: url('fonts/Minh-Nguyen-Regular.woff2') format('woff2'), /* .woff2 格式（如果有的話） */
-       url('fonts/Minh-Nguyen-Regular.woff') format('woff');   /* .woff 格式 */
+  font-family: 'LXGW Wen Kai TC'; /* 您希望在 CSS 中使用的字體名稱 */
+  src: url('fonts/LXGWWenKaiTC-Regular') format('woff');   /* .woff 格式 */
   font-weight: normal; /* 字體粗細，可以根據您的字體文件調整 */
   font-style: normal;  /* 字體樣式，例如斜體等 */
 }
@@ -27,15 +26,29 @@ body {
 /* 外圈轉盤 */
 .outer-wheel {
   position: absolute;
-  width: 130%;
-  height: 130%;
+  width: 160%; /* 變大 */
+  height: 160%; /* 變大 */
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -15%;
-  top: -15%;
-  /* 確保外圈在內圈之下 */
+  left: -30%; /* 調整位置使其居中 */
+  top: -30%; /* 調整位置使其居中 */
+  /* 確保外圈在最下方 */
   z-index: 1;
+}
+
+/* 中圈轉盤 */
+.middle-wheel {
+  position: absolute;
+  width: 130%; /* 原來外圈的大小 */
+  height: 130%; /* 原來外圈的大小 */
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid black;
+  left: -15%; /* 原來外圈的位置 */
+  top: -15%; /* 原來外圈的位置 */
+  /* 確保中圈在外圈之上，內圈之下 */
+  z-index: 2;
 }
 
 /* 內圈轉盤 */
@@ -48,8 +61,8 @@ body {
   border: 3px solid black;
   left: 10%;
   top: 10%;
-  /* 確保內圈在外圈之上 */
-  z-index: 2;
+  /* 確保內圈在中圈之上 */
+  z-index: 3;
 }
 
 /* 放射線（分隔線） */
@@ -76,7 +89,7 @@ body {
   font-weight: bold;
   color: black;
   text-align: center;
-  font-family: 'Minh Nguyen', serif; /* 使用您在 @font-face 中定義的字體名稱 */
+  font-family: 'LXGW Wen Kai TC', sans-serif; /* 使用您在 @font-face 中定義的字體名稱 */
   /* 若有需要，可加入 clip-path 設定扇形效果 */
   /* clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); */
 }
