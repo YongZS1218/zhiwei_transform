@@ -40,13 +40,13 @@ body {
 /* 中圈轉盤 */
 .middle-wheel {
   position: absolute;
-  width: 120%; /* 縮小中間圈，您可以調整這個數值 */
-  height: 120%; /* 縮小中間圈，您可以調整這個數值 */
+  width: 115%; /* 縮小中間圈，您可以調整這個數值 */
+  height: 115%; /* 縮小中間圈，您可以調整這個數值 */
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -10%; /* 調整位置使其居中，計算方式 (100% - width) / 2 */
-  top: -10%; /* 調整位置使其居中，計算方式 (100% - height) / 2 */
+  left: -7.5%; /* 調整位置使其居中，計算方式 (100% - width) / 2 */
+  top: -7.5%; /* 調整位置使其居中，計算方式 (100% - height) / 2 */
   /* 確保中間圈在外圈之上，內圈之下 */
   z-index: 2;
 }
