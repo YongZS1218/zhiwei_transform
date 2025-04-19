@@ -52,28 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // === 轉盤拖拽功能修改 ===
-  // 計算每個格子的半個角度（假設三個圈的格子數量相同）
-  const anglePerSegment = 360 / outerCount; // 或者 middleCount, innerCount，如果數量不同需要分別計算
-  const initialOffsetAngle = anglePerSegment / 2;
-
-  // 找到轉盤元素
-  const outerWheel = document.querySelector('.outer-wheel');
-  const middleWheel = document.querySelector('.middle-wheel');
-  const innerWheel = document.querySelector('.inner-wheel');
-
-  // 設定初始旋轉角度
-  // 由於我們的 segment 定位已經偏移了 initialOffsetAngle，
-  // 所以需要將整個轉盤向後旋轉 initialOffsetAngle，使得 index 為 0 的格子的中心朝上
-  const initialRotation = -initialOffsetAngle;
-
-  outerWheel.style.transform = `rotate(${initialRotation}deg)`;
-  middleWheel.style.transform = `rotate(${initialRotation}deg)`;
-  innerWheel.style.transform = `rotate(${initialRotation}deg)`;
-
-  // 初始化拖拽功能的當前角度變數，使其從初始角度開始
-  let currentOuterAngle = initialRotation;
-  let currentInnerSyncAngle = initialRotation;
-
   const outerWheel = document.querySelector('.outer-wheel');
   const middleWheel = document.querySelector('.middle-wheel');
   const innerWheel = document.querySelector('.inner-wheel');
