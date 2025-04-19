@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (text.length === 1) {
       translateValue = 860; // 單字平移較多
     } else if (text.length === 2) {
-      translateValue = 420; // 雙字平移較少
+      translateValue = 400; // 雙字平移較少
     } else if (text.length === 3) {
-      translateValue = 420; // “𩒺”占2個碼元
+      translateValue = 400; // “𩒺”占2個碼元
     }
 
     seg.style.transform = `rotate(${angle}deg) translate(${translateValue}%)`;
