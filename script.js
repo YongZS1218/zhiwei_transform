@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   outerSegments.forEach((seg, index) => {
     const anglePerSegment = 360 / outerCount;
     // 將初始角度偏移半個格子的角度
-    let angle = index * anglePerSegment + anglePerSegment / 2 - 7;
+    let angle = index * anglePerSegment + anglePerSegment / 2 - 5;
     // 移除反向旋轉
     seg.style.transform = `rotate(${angle}deg) translate(580%)`;
   });
@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const middleCount = middleSegments.length;
   middleSegments.forEach((seg, index) => {
     const anglePerSegment = 360 / middleCount;
-    let angle = index * anglePerSegment + anglePerSegment / 2 - 7;
+    let angle = index * anglePerSegment + anglePerSegment / 2 - 5;
     const text = seg.textContent.trim(); // 取得文字內容並去除空白
     let translateValue = 165; // 預設值
 
     if (text.length === 1) {
-      translateValue = 820; // 單字平移較多
+      translateValue = 860; // 單字平移較多
     } else if (text.length === 2) {
       translateValue = 420; // 雙字平移較少
     } else if (text.length === 3) {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   innerSegments.forEach((seg, index) => {
     const anglePerSegment = 360 / innerCount;
     // 將初始角度偏移半個格子的角度，並添加一個小的調整值（例如 -7 度）
-    let angle = index * anglePerSegment + anglePerSegment / 2 - 7;
+    let angle = index * anglePerSegment + anglePerSegment / 2 - 5;
     const text = seg.textContent.trim(); // 取得文字內容並去除空白
     let translateValue = 165; // 預設值
 
