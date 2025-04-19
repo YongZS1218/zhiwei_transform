@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 將初始角度偏移半個格子的角度
     let angle = index * anglePerSegment + anglePerSegment / 2;
     // 移除反向旋轉
-    seg.style.transform = `rotate(${angle}deg) translate(590%)`;
+    seg.style.transform = `rotate(${angle}deg) translate(580%)`;
   });
 
   // 為中間圈每個扇形自動配置 transform
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let translateValue = 165; // 預設值
 
     if (text.length === 1) {
-      translateValue = 750; // 單字平移較多
+      translateValue = 790; // 單字平移較多
     } else if (text.length === 2) {
-      translateValue = 460; // 雙字平移較少
+      translateValue = 440; // 雙字平移較少
     } else if (text.length === 3) {
-      translateValue = 460; // “𩒺”占2個碼元
+      translateValue = 440; // “𩒺”占2個碼元
     }
 
     seg.style.transform = `rotate(${angle}deg) translate(${translateValue}%)`;
