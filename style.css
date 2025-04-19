@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'LXGW Wen Kai TC'; /* 您希望在 CSS 中使用的字體名稱 */
-  src: url('fonts/LXGWWenKaiTC-Regular') format('woff');   /* .woff 格式 */
+  src: url('fonts/LXGWWenKaiTC-Regular.woff') format('woff');   /* .woff 格式 */
   font-weight: normal; /* 字體粗細，可以根據您的字體文件調整 */
   font-style: normal;  /* 字體樣式，例如斜體等 */
 }
@@ -26,13 +26,13 @@ body {
 /* 外圈轉盤 */
 .outer-wheel {
   position: absolute;
-  width: 160%; /* 變大 */
-  height: 160%; /* 變大 */
+  width: 150%; /* 變大 */
+  height: 150%; /* 變大 */
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -30%; /* 調整位置使其居中 */
-  top: -30%; /* 調整位置使其居中 */
+  left: -25%; /* 調整位置使其居中 */
+  top: -25%; /* 調整位置使其居中 */
   /* 確保外圈在最下方 */
   z-index: 1;
 }
@@ -40,13 +40,13 @@ body {
 /* 中圈轉盤 */
 .middle-wheel {
   position: absolute;
-  width: 110%; /* 縮小中間圈，您可以調整這個數值 */
-  height: 110%; /* 縮小中間圈，您可以調整這個數值 */
+  width: 120%; /* 縮小中間圈，您可以調整這個數值 */
+  height: 120%; /* 縮小中間圈，您可以調整這個數值 */
   border-radius: 50%;
   background-color: white;
   border: 3px solid black;
-  left: -5%; /* 調整位置使其居中，計算方式 (100% - width) / 2 */
-  top: -5%; /* 調整位置使其居中，計算方式 (100% - height) / 2 */
+  left: -10%; /* 調整位置使其居中，計算方式 (100% - width) / 2 */
+  top: -10%; /* 調整位置使其居中，計算方式 (100% - height) / 2 */
   /* 確保中間圈在外圈之上，內圈之下 */
   z-index: 2;
 }
