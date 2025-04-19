@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let translateValue = 165; // 預設值
 
     if (text.length === 1) {
-      translateValue = 730; // 單字平移較多
+      translateValue = 750; // 單字平移較多
     } else if (text.length === 2) {
-      translateValue = 470; // 雙字平移較少
+      translateValue = 460; // 雙字平移較少
     } else if (text.length === 3) {
-      translateValue = 470; // “𩒺”占2個碼元
+      translateValue = 460; // “𩒺”占2個碼元
     }
 
     seg.style.transform = `rotate(${angle}deg) translate(${translateValue}%)`;
