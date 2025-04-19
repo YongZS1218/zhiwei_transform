@@ -7,9 +7,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // 將初始角度偏移半個格子的角度
     let angle = index * anglePerSegment + anglePerSegment / 2;
     // 移除反向旋轉
-    seg.style.transform = `rotate(${angle}deg) translate(440%)`;
+    seg.style.transform = `rotate(${angle}deg) translate(660%)`;
   });
 
+  // 為中間圈每個扇形自動配置 transform
+  const middleSegments = document.querySelectorAll('.middle-wheel .segment');
+  const middleCount = middleSegments.length;
+  middleSegments.forEach((seg, index) => {
+    const anglePerSegment = 360 / middleCount;
+    let angle = index * anglePerSegment + anglePerSegment / 2;
+    const text = seg.textContent.trim(); // 取得文字內容並去除空白
+    let translateValue = 165; // 預設值
+
+    if (text.length === 1) {
+      translateValue = 630; // 單字平移較多
+    } else if (text.length === 2) {
+      translateValue = 300; // 雙字平移較少
+    }
+
+    seg.style.transform = `rotate(${angle}deg) translate(${translateValue}%)`;
+  });
+  
   // 為內圈每個扇形自動配置 transform
   const innerSegments = document.querySelectorAll('.inner-wheel .segment');
   const innerCount = innerSegments.length;
