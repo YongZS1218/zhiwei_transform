@@ -86,7 +86,7 @@ body {
   transform-origin: 0 0;
   /* 文字樣式 */
   font-size: calc(0.8em);
-  font-weight: bold;
+  font-weight: normal;
   color: black;
   text-align: center;
   font-family: 'LXGW Wen Kai TC', sans-serif; /* 使用您在 @font-face 中定義的字體名稱 */
