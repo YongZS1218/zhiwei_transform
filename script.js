@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const middleCount = middleSegments.length;
   middleSegments.forEach((seg, index) => {
     const anglePerSegment = 360 / middleCount;
-    let angle = index * anglePerSegment + anglePerSegment / 2 - 6;
+    let angle = index * anglePerSegment + anglePerSegment / 2 - 5;
     const text = seg.textContent.trim(); // 取得文字內容並去除空白
     let translateValue = 165; // 預設值
 
