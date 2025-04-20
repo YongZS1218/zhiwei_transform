@@ -90,6 +90,7 @@ body {
   color: black;
   text-align: center;
   font-family: 'LXGW Wen Kai TC', sans-serif; /* 使用您在 @font-face 中定義的字體名稱 */
+  width: 20%; /* 爲 segment 設定一個百分比寬度，您可以調整這個數值 */
   /* 若有需要，可加入 clip-path 設定扇形效果 */
   /* clip-path: polygon(35% 35%, 100% 0, 100% 100%, 35% 100%); */
 }
