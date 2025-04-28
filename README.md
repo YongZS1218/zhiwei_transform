@@ -1,6 +1,4 @@
-## 旋宮圖｜Hsüan Kung Diagram
-
-[https://yongzs1218.github.io/hsuan-kung]
+## [旋宮圖｜Hsüan Kung Diagram](https://yongzs1218.github.io/hsuan-kung)
 
 This work is open-source via CC BY-NC 4.0 license.
 
